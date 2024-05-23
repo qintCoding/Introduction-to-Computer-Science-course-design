@@ -128,7 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="print.c" />
+    <ClCompile Include="PrintMenu.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataStruct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

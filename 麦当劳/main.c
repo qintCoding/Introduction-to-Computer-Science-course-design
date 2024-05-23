@@ -1,21 +1,7 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
-typedef struct {
-	char name[60]; //食物名字
-	int time; //制作时间
-	int capacity; //最大存储量
-}Food; //定义食物类
-typedef struct {
-	char name[60]; //套餐名称
-	int sum; //套餐中食物的数目
-	Food food[10]; //套餐包含的食物种类
-}Combo;
-typedef struct {
-	Food food[110]; //菜单中的单品
-	Combo combo[110];  //菜单中的套餐
-	int N, M, W1, W2;
-}Menu;
+#include"DataStruct.h"
 static int order; // 记录未处理的订单数目
 static int interval[110]; //记录每种食物已经使用的制作时长
 static int remain[110]; //记录食物的剩余数目
@@ -144,6 +130,7 @@ void ProcessOrder(Menu menu) { //读取每一行订单并处理
 }
 int main() {
 	Menu menu = InitMenu(); //获取菜单
+	PrintMenu(menu);
 	int n; scanf("%d", &n);
 	while (n--) {
 		ProcessOrder(menu); //处理订单
